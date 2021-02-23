@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46DCA284-679D-4D43-B44A-368C47F5C677}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ImrPlatform</RootNamespace>
+    <AssemblyName>ImrPlatform</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Expression.Samples.PathListBoxUtils, Version=4.0.0.0, Culture=neutral, PublicKeyToken=76319f7ba805fb35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HSH\Downloads\Carousel\CarouselMVVM\Lib\Expression.Samples.PathListBoxUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.1.0.145, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>packages\SharpZipLib.1.1.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IMRUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\IMRUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Controls, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HSH\Downloads\Carousel\CarouselMVVM\Lib\Microsoft.Expression.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HSH\Downloads\Carousel\CarouselMVVM\Lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\EnumDef.cs" />
+    <Compile Include="Common\MultiValueConverter.cs" />
+    <Compile Include="Common\RouterEventHelper.cs" />
+    <Compile Include="Common\StaticUtils.cs" />
+    <Compile Include="Communication\CallQuery.cs" />
+    <Compile Include="Communication\ComnService.cs" />
+    <Compile Include="Connected Services\JirehService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Constant\Service.cs" />
+    <Compile Include="Model\DB\DELETE\D_MA_USR_FAV_SIN.cs" />
+    <Compile Include="Model\DB\INSERT\I_MA_USR_FAV_SIN.cs" />
+    <Compile Include="Model\DB\INSERT\I_MA_USR_PRCH_SIN.cs" />
+    <Compile Include="Model\DB\INSERT\I_MA_USR_REV_SIN.cs" />
+    <Compile Include="Model\DB\SELECT\S_CO_ETC_VER_SIN.cs" />
+    <Compile Include="Model\DB\SELECT\S_CO_USR_LGN_SIN.cs" />
+    <Compile Include="Model\DB\SELECT\S_CV_CTS_INFO_SIN.cs" />
+    <Compile Include="Model\DB\SELECT\S_CV_CTS_REV_LIST.cs" />
+    <Compile Include="Model\DB\SELECT\S_MA_CTS_SRCH_LIST.cs" />
+    <Compile Include="Model\DB\SELECT\S_MA_USR_FAV_LIST.cs" />
+    <Compile Include="Model\DB\SELECT\S_MA_USR_PRCH_LIST.cs" />
+    <Compile Include="Model\DB\SELECT\S_MA_USR_REV_LIST.cs" />
+    <Compile Include="Model\DB\UPDATE\U_MA_USR_REV_SIN.cs" />
+    <Compile Include="Model\UdtContentItem.cs" />
+    <Compile Include="Model\UdtMyListItem.cs" />
+    <Compile Include="Model\UdtReviewItem.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="ViewModel\ContentsViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\Contents\CarouselControl.xaml.cs">
+      <DependentUpon>CarouselControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ucContentsMain.xaml.cs">
+      <DependentUpon>ucContentsMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ucReview.xaml.cs">
+      <DependentUpon>ucReview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ucReviewList.xaml.cs">
+      <DependentUpon>ucReviewList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ucReviewListItem.xaml.cs">
+      <DependentUpon>ucReviewListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contents\ucReviewWrite.xaml.cs">
+      <DependentUpon>ucReviewWrite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Control\ucRounderProgressBarControl.xaml.cs">
+      <DependentUpon>ucRounderProgressBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\ucLogin.xaml.cs">
+      <DependentUpon>ucLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\ucMain.xaml.cs">
+      <DependentUpon>ucMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\ucContentListItem.xaml.cs">
+      <DependentUpon>ucContentListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\ucSideMainLeft.xaml.cs">
+      <DependentUpon>ucSideMainLeft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\ucMyListItem.xaml.cs">
+      <DependentUpon>ucMyListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\ucOkCancelPopup.xaml.cs">
+      <DependentUpon>ucOkCancelPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\ucPopup.xaml.cs">
+      <DependentUpon>ucPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\ucOkPopup.xaml.cs">
+      <DependentUpon>ucOkPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewCommon\ucInfoBox.xaml.cs">
+      <DependentUpon>ucInfoBox.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ControlDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ResourceDictionary\CommonDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\CarouselControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Contents\ucContentsMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\ucReview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\ucReviewList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\ucReviewListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contents\ucReviewWrite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Control\ucRounderProgressBarControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Login\ucLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Main\ucMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Main\ucContentListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Main\ucSideMainLeft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Popup\ucMyListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Popup\ucOkCancelPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Popup\ucPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Popup\ucOkPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ViewCommon\ucInfoBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Connected Services\JirehService\ImrPlatform.JirehService.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JirehService\JirehFramework11.wsdl" />
+    <None Include="Connected Services\JirehService\PerfectNetworkCommunicationService33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\JirehService\PerfectNetworkCommunicationService34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\JirehService\PerfectNetworkCommunicationService35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\next.png" />
+    <Resource Include="Image\previous.png" />
+    <None Include="Connected Services\JirehService\PerfectNetworkCommunicationService11.disco" />
+    <Resource Include="Image\icon_category_animal.png" />
+    <Resource Include="Image\icon_category_game.png" />
+    <Resource Include="Image\icon_category_plant.png" />
+    <Resource Include="Image\icon_category_safety.png" />
+    <Resource Include="Image\icon_category_science.png" />
+    <Resource Include="Image\icon_category_sciencefiction.png" />
+    <Resource Include="Image\icon_category_study.png" />
+    <Resource Include="Image\icon_sidepopup_pick.png" />
+    <Resource Include="Image\icon_sidepopup_purchase.png" />
+    <Resource Include="Image\icon_sidepopup_review.png" />
+    <Resource Include="Image\icon_star.png" />
+    <Resource Include="Image\icon_search.png" />
+    <Resource Include="Image\icon_sidepopup_user.png" />
+    <Resource Include="Image\icon_image_left.png" />
+    <Resource Include="Image\icon_image_right.png" />
+    <Resource Include="Image\icon_login_check.png" />
+    <Resource Include="Image\icon_close.png" />
+    <Resource Include="Image\icon_down.png" />
+    <Resource Include="Image\icon_login_check_change.png" />
+    <Resource Include="Image\icon_sidepopup_pick2.png" />
+    <Resource Include="Image\icon_sidepopup_purchase2.png" />
+    <Resource Include="Image\icon_sidepopup_review2.png" />
+    <Resource Include="Image\icon_image_left2.png" />
+    <Resource Include="Image\icon_image_right2.png" />
+    <Resource Include="Image\icon_sidepopup_arrow1.png" />
+    <Resource Include="Image\icon_sidepopup_arrow2.png" />
+    <Resource Include="Image\icon_sidepopup_arrow3.png" />
+    <Resource Include="Image\icon_sidepopup_arrow_close1.png" />
+    <Resource Include="Image\icon_sidepopup_arrow_close2.png" />
+    <Resource Include="Image\icon_sidepopup_arrow_close3.png" />
+    <Resource Include="Image\icon_platform_close1.png" />
+    <Resource Include="Image\icon_platform_close2.png" />
+    <Content Include="Lib\Microsoft.Expression.Controls.dll" />
+    <Content Include="Lib\Microsoft.Expression.Drawing.dll" />
+    <Content Include="Lib\Microsoft.Expression.Interactions.dll" />
+    <Content Include="Lib\System.Windows.Interactivity.dll" />
+    <Resource Include="Document.txt" />
+    <None Include="Connected Services\JirehService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\JirehService\configuration.svcinfo" />
+    <None Include="Connected Services\JirehService\configuration91.svcinfo" />
+    <Resource Include="Image\test.jpg" />
+    <Resource Include="Image\testicon_01.png" />
+    <Resource Include="Image\testicon_02.png" />
+    <Resource Include="Image\testicon_03.png" />
+    <Resource Include="Image\testicon_04.png" />
+    <Content Include="Lib\Carousel.dll" />
+    <Content Include="Lib\Expression.Samples.PathListBoxUtils.dll" />
+    <Content Include="Lib\IMRUtils.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\JirehService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

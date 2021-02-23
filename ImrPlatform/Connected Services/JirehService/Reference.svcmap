@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aaa3caa2-d03c-4afd-80c7-fd1b9061bf3c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.0.10:8027/JirehService/PerfectNetworkCommunicationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PerfectNetworkCommunicationService33.xsd" MetadataType="Schema" ID="af19c9b1-a04f-47a8-bc83-1f2cce200e1d" SourceId="1" SourceUrl="http://192.168.0.10:8027/JirehService/PerfectNetworkCommunicationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PerfectNetworkCommunicationService34.xsd" MetadataType="Schema" ID="b9ebfe99-717b-447c-b4c6-9c79efbd0d30" SourceId="1" SourceUrl="http://192.168.0.10:8027/JirehService/PerfectNetworkCommunicationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="JirehFramework11.wsdl" MetadataType="Wsdl" ID="e79987be-2790-4123-8ad6-3390c64d51a8" SourceId="1" SourceUrl="http://192.168.0.10:8027/JirehService/PerfectNetworkCommunicationService.svc?wsdl" />
+    <MetadataFile FileName="PerfectNetworkCommunicationService11.disco" MetadataType="Disco" ID="85889e94-5c9d-459c-8010-5128f4edc830" SourceId="1" SourceUrl="http://192.168.0.10:8027/JirehService/PerfectNetworkCommunicationService.svc?disco" />
+    <MetadataFile FileName="PerfectNetworkCommunicationService35.xsd" MetadataType="Schema" ID="a65b8e8d-851b-4f06-bb8b-18c8a61b8430" SourceId="1" SourceUrl="http://192.168.0.10:8027/JirehService/PerfectNetworkCommunicationService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="ImrPlatform.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImrPlatform"
+        xmlns:view ="clr-namespace:ImrPlatform.View.Main"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+        mc:Ignorable="d"
+        Title="MainWindow" Height="908" Width="1200"
+        WindowStyle="None"
+        Margin="0,0,0,0"
+        ResizeMode="NoResize"
+        Padding="0,0,0,0"
+        WindowState="Normal"
+        WindowStartupLocation="CenterScreen">
+    <Grid  Margin="0,0,0,0">
+        <StackPanel  Margin="0,0,0,0">
+            <StackPanel  Margin="0,0,0,0" Height="35"  Orientation="Horizontal">
+
+                <Image Source="/ImrPlatform;component/Image/icon_sidepopup_pick.png"
+                   HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Margin="10,10,10,10"
+                   Width="17" 
+                       Height="17"/>
+                <Border Width="1121" Height="35" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown" Background="White"></Border>
+                <Image x:Name="imgExit" Source="/ImrPlatform;component/Image/icon_platform_close2.png"
+                       Width="42" Height="35"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Top"
+                       Margin="0,0,0,0"
+                       MouseUp="Image_MouseUp" 
+                       MouseDown="ImgExit_MouseDown"
+                       MouseLeave="Image_MouseLeave"
+                       Stretch="Fill">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger  EventName="MouseDown">
+                            
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Image>
+            </StackPanel>
+            <view:ucMain Height="873"/>
+        </StackPanel>
+    </Grid>
+</Window>

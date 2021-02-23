@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ImrPlatform.ResourceDictionary">
+    
+
+        <Storyboard x:Key="CurrentImageStoryboardKey"
+            Storyboard.TargetProperty="(Image.Opacity)">
+            <DoubleAnimation Storyboard.TargetName="currentImage"
+                             Duration="0:0:0.5"
+                             To="1" />
+
+            <DoubleAnimation Storyboard.TargetName="nextImage"
+                             Duration="0:0:1"
+                             To="0" />
+        </Storyboard>
+        
+        <Storyboard x:Key="NextImageStoryboardKey"
+                    Storyboard.TargetProperty="(Image.Opacity)">
+            
+            <DoubleAnimation Storyboard.TargetName="nextImage"
+                             Duration="0:0:0.5"
+                             To="1" />
+            <DoubleAnimation Storyboard.TargetName="currentImage"
+                             Duration="0:0:1"
+                             To="0" />
+        </Storyboard>
+    
+</ResourceDictionary>
